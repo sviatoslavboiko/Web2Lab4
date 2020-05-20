@@ -1,0 +1,21 @@
+<div >
+  <div *ngIf="train">
+    <h3>Train details</h3>
+    <form>
+      <label for="trainId">id:
+        <input #trainId type="number" name="trainId" required disabled value={{train.id}}>
+      </label><br>
+      <label for="trainName">name:
+        <input #trainName type="text" name="trainName" required value={{train.name}}>
+      </label><br>
+      <label for="trainRoute">route:
+        <input #trainRoute type="text" name="trainRoute" required value={{train.route}}>
+      </label><br>
+      <label for="trainSeats">seats:
+        <input #trainSeats type="number" name="trainSeats" required value={{train.seats}}>
+      </label><br>
+      <button class="btn btn-warning" style="margin-right: 50px;" (click)="editTrain(trainId.value, trainName.value, trainRoute.value, trainSeats.value)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteTrain(train)">Delete</button>
+    </form>
+  </div>
+</div>

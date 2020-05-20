@@ -1,0 +1,16 @@
+<div *ngIf="passenger">
+  <h3>Passenger details</h3>
+  <form>
+    <label for="passengerId">id: 
+      <input #passengerId type="number" name="passengerId" required disabled value={{passenger.id}}>
+    </label><br>
+    <label for="passengerName">name: 
+      <input #passengerName type="text" name="passengerName" required value={{passenger.name}}>
+    </label><br>
+    <label for="passengerSurname">surname: 
+      <input #passengerSurname type="text" name="passengerSurname" required value={{passenger.surname}}>
+    </label><br>
+    <button class="btn btn-warning" style="margin-right: 50px;" (click)="editPassenger(passengerId.value,passengerName.value,passengerSurname.value)">Edit</button>
+    <button class="btn btn-danger" (click)="deletePassenger(passenger)">Delete</button>
+  </form>
+</div>

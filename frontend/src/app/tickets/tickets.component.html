@@ -1,0 +1,11 @@
+<div class="container">
+    <app-ticket-add (changed)="getTickets()"></app-ticket-add>
+<h3>Tickets</h3>
+<ul class="tickets">
+    <li *ngFor="let ticket of tickets" [class.selected]="ticket === selectedTicket"
+        (click)="onSelect(ticket)">
+        <span class="badge">{{ticket.id}}</span> Price: {{ticket.price}}, Passenger: {{ticket.passenger.name}} {{ticket.passenger.surname}}, Train: {{ticket.train.name}} - {{ticket.train.route}}, Seat: {{ticket.seat}}, Date: {{ticket.date}}
+    </li>
+</ul>
+<app-ticket-details [ticket]="selectedTicket" (changed)="getTickets()"></app-ticket-details>
+</div>

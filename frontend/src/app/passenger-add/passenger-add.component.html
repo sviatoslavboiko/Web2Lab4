@@ -1,0 +1,15 @@
+<div class="">
+  <h3>Add Passenger</h3>
+  <form>
+    <label for="passengerId">id: 
+      <input #passengerId type="number" name="passengerId" required>
+    </label><br>
+    <label for="passengerName">name: 
+      <input #passengerName type="text" name="passengerName" required>
+    </label><br>
+    <label for="passengerSurname">surname: 
+      <input #passengerSurname type="text" name="passengerSurname" required>
+    </label><br>
+    <button class="btn btn-primary" (click)="addPassenger(passengerId.value,passengerName.value,passengerSurname.value)">Add</button>
+  </form>
+</div>

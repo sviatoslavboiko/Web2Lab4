@@ -1,0 +1,21 @@
+<div >
+  <h3>Add Train</h3>
+<form>
+  <label for="trainId">ID:
+    <input #trainId type="number" name="trainId" required>
+  </label><br>
+  <label for="trainName">Name:
+    <input #trainName type="text" name="trainName" required>
+  </label><br>
+  <label for="routeStart">Start:
+    <input #routeStart type="text" name="routeStart" required>
+  </label><br>
+  <label for="routeEnd">End:
+    <input #routeEnd type="text" name="routeEnd" required>
+  </label><br>
+  <label for="trainSeats">Seats:
+    <input #trainSeats type="number" name="trainSeats" required>
+  </label><br>
+  <button class="btn btn-primary" (click)="addTrain(trainId.value, trainName.value, routeStart.value, routeEnd.value, trainSeats.value)">Add</button>
+</form>
+</div>

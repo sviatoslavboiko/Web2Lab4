@@ -1,0 +1,32 @@
+<h3>Add Ticket</h3>
+<form>
+  <label for="ticketId">id:
+    <input #ticketId type="number" name="ticketId" required>
+  </label><br>
+  <label for="ticketPrice">price:
+    <input #ticketPrice type="number" name="ticketPrice" required>
+  </label><br>
+  <label for="ticketPassenger">passenger:
+    <input #ticketPassenger type="number" name="ticketPassenger" required>
+    <!-- <select #ticketPassenger name="ticketPassenger"> -->
+      <!-- <option *ngFor="let passenger of passengers" value="{{passenger.id}}"> -->
+        <!-- {{passenger.name}} {{passenger.surname}} -->
+      <!-- </option> -->
+    <!-- </select> -->
+  </label><br>
+  <label for="ticketTrain">train:
+    <input #ticketTrain type="number" name="ticketPassenger" required>
+    <!-- <select #ticketTrain name="ticketTrain"> -->
+      <!-- <option *ngFor="let train of trains" value="{{train.id}}"> -->
+        <!-- {{train.name}} - {{train.route}} ({{train.seats}}) -->
+      <!-- </option> -->
+    <!-- </select> -->
+  </label><br>
+  <label for="ticketSeat">seat:
+    <input #ticketSeat type="number" name="ticketSeat" required>
+  </label><br>
+  <label for="ticketDate">date:
+    <input #ticketDate type="date" name="ticketDate" required>
+  </label><br>
+  <button class="btn btn-primary" (click)="addTicket(ticketId.value, ticketPrice.value, ticketPassenger.value, ticketTrain.value, ticketSeat.value, ticketDate.value)">Add</button>
+</form>

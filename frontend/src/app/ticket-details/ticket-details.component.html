@@ -1,0 +1,34 @@
+<div *ngIf="ticket">
+  <h3>Ticket details</h3>
+  <form>
+    <label for="ticketId">id:
+      <input #ticketId type="number" name="ticketId" required disabled value={{ticket.id}}>
+    </label><br>
+    <label for="ticketPrice">price:
+      <input #ticketPrice type="number" name="ticketPrice" required value={{ticket.price}}>
+    </label><br>
+    <label for="ticketPassenger">passenger:
+      <select #ticketPassenger name="ticketPassenger">
+        <option *ngFor="let passenger of passengers" value="{{passenger.id}}"
+          [selected]="passenger.id === ticket.passenger.id">
+          {{passenger.name}} {{passenger.surname}}
+        </option>
+      </select>
+    </label><br>
+    <label for="ticketTrain">train:
+      <select #ticketTrain name="ticketTrain">
+        <option *ngFor="let train of trains" value="{{train.id}}" [selected]="train.id === ticket.train.id">
+          {{train.name}} - {{train.route}} ({{train.seats}})
+        </option>
+      </select>
+    </label><br>
+    <label for="ticketSeat">seat:
+      <input #ticketSeat type="number" name="ticketSeat" required value={{ticket.seat}}>
+    </label><br>
+    <label for="ticketDate">date:
+      <input #ticketDate type="date" name="ticketDate" required value={{ticket.date}}>
+    </label><br>
+    <button class="btn btn-warning" style="margin-right: 50px" (click)="editTicket(ticketId.value, ticketPrice.value, ticketPassenger.value, ticketTrain.value, ticketSeat.value, ticketDate.value)">Edit</button>
+    <button class="btn btn-danger" (click)="deleteTicket(ticket)">Delete</button>
+  </form>
+</div>

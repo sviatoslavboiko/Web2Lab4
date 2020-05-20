@@ -1,0 +1,16 @@
+<h3>Sold tickets on train</h3>
+<form>
+  <label for="trainId">train:
+    <select #trainId name="trainId">
+      <option *ngFor="let train of trains" value="{{train.id}}">
+        {{train.name}} - {{train.route}} ({{train.seats}})
+      </option>
+    </select>
+  </label>
+  <button (click)=getSoldTicketsOnTrain(trainId.value)>Find</button>
+</form>
+<ul>
+  <li *ngFor="let ticket of tickets">
+    <span class="badge">{{ticket.id}}</span> Price: {{ticket.price}}, Passenger: {{ticket.passenger.name}} {{ticket.passenger.surname}}, Train: {{ticket.train.name}} - {{ticket.train.route}}, Seat: {{ticket.seat}}, Date: {{ticket.date}}
+  </li>
+</ul>
